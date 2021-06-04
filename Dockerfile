@@ -3,7 +3,7 @@ FROM datacats/web
 MAINTAINER boxkite
 
 ENV CKAN_HOME /usr/lib/ckan
-ENV BRANCH master
+ENV BRANCH ckan-2.8.2
 
 RUN virtualenv $CKAN_HOME && \
     mkdir -p $CKAN_HOME /project /var/www/storage && \

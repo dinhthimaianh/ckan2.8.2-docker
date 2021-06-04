@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER anhdtm
 
+USER root
 RUN locale-gen en_US.UTF-8 && \
 echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 

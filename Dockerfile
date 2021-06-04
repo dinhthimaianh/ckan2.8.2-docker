@@ -1,6 +1,6 @@
-FROM datacats/web
+FROM datacats/web:latest
 
-MAINTAINER boxkite
+MAINTAINER anhdtm
 
 ENV CKAN_HOME /usr/lib/ckan
 ENV BRANCH ckan-2.8.2

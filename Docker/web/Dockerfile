@@ -35,7 +35,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -q -y install \
         vim 
 
 #Configure webserver
-ADD apache.wsgi /etc/ckan/apache.wsgi
+ADD ./apache.wsgi /etc/ckan/apache.wsgi
 ADD ckan_default.conf /etc/apache2/sites-available/ckan_default.conf
 ADD ports.conf /etc/apache2/ports.conf
 RUN a2ensite ckan_default

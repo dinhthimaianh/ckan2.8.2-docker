@@ -1,4 +1,4 @@
-FROM anhdtmse62452/web
+FROM anhdtmse62452/web:16.04
 
 MAINTAINER anhdtm
 

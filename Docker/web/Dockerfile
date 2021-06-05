@@ -1,38 +1,37 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 MAINTAINER anhdtm
 
-# USER root
-# RUN locale-gen en_US.UTF-8 && \
-# echo 'LANG="en_US.UTF-8"' > /etc/default/locale
-
-USER root
-
-#Install the packages we need
-RUN apt-get -q -y update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -q -y install \
-        && apt-get -q -y install \
+# Install required system packages
+RUN apt-get -q -y update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
+    && apt-get -q -y install \
         python-minimal \
         python-dev \
         python-pip \
         python-virtualenv \
+        python-wheel \
         libpq-dev \
         libxml2-dev \
-        libxslt1-dev \
-        wget \
-        postfix \
+        libxslt-dev \
+        libgeos-dev \
+        libssl-dev \
+        libffi-dev \
+        postgresql-client \
         build-essential \
         git-core \
+        vim \
+        wget \
         apache2 \
         libapache2-mod-wsgi \
-        libgeos-dev \
         libmysqlclient-dev \
         libcurl4-openssl-dev \
         libldap2-dev \
         libsasl2-dev \
-        libssl-dev \
+        postfix\
         gdal-bin \
-        postgresql-client\
-        vim 
+    && apt-get -q clean \
+    && rm -rf /var/lib/apt/lists/*
+
 
 #Configure webserver
 ADD Docker/web/apache.wsgi /etc/ckan/apache.wsgi

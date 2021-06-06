@@ -5,6 +5,7 @@ MAINTAINER anhdtm
 RUN apt-get -q -y update \
     && DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
     && apt-get -q -y install \
+        sudo\
         python-minimal \
         python-dev \
         python-pip \

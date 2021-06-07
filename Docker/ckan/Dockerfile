@@ -15,4 +15,5 @@ RUN virtualenv $CKAN_HOME && \
     $CKAN_HOME/bin/pip install -r /project/ckan/requirements.txt && \
     $CKAN_HOME/bin/pip install -e /project/ckan && \
     $CKAN_HOME/bin/pip install ckanapi && \
-    $CKAN_HOME/bin/pip install -r /project/datapusher/requirements.txt
+    $CKAN_HOME/bin/pip install -r /project/datapusher/requirements.txt\
+    $CKAN_HOME/bin/pip install Flask==0.12.4

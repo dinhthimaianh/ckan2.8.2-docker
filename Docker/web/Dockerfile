@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER anhdtm
 
 # Install required system packages
+USER root
 RUN apt-get -q -y update \
     && DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
     && apt-get -q -y install \

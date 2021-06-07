@@ -29,7 +29,9 @@ RUN apt-get -q -y update \
         libcurl4-openssl-dev \
         libldap2-dev \
         libsasl2-dev \
-        gdal-bin 
+        gdal-bin \
+    && apt-get -q clean \
+    && rm -rf /var/lib/apt/lists/*
 
 
 #Configure webserver

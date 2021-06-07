@@ -17,5 +17,6 @@ RUN    $CKAN_HOME/bin/pip install -e /project/ckan
 RUN    $CKAN_HOME/bin/pip install ckanapi 
 RUN    $CKAN_HOME/bin/pip install -r /project/datapusher/requirements.txt
 RUN     $CKAN_HOME/bin/pip install Flask==0.12.4
-RUN chown -R www-data:www-data /project/ckan
-RUN chmod -R  u+rwx /project/ckan
+# RUN chown -R www-data:www-data /project/ckan
+RUN chmod -R  777 /project/ckan
+RUN chmod -R 777 /project/ckan/ckan/public/base/i18n

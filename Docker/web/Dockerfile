@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER anhdtm
 
-USER root
 # Install required system packages
 RUN apt-get -q -y update \
     && DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
@@ -44,6 +43,7 @@ RUN a2dissite 000-default
 RUN mkdir -p /var/www/storage
 RUN chown -R www-data:www-data /var/www/
 RUN usermod -u 1000 -d /var/www/storage www-data
+RUN chmod -R 777 /var/www/storage
 
 CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
 EXPOSE 5000
